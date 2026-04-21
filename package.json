@@ -1,0 +1,16 @@
+{
+  "name": "invitacion-casamiento-facu-andre",
+  "version": "1.0.0",
+  "description": "Invitación web de casamiento para Facu y Andre",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "latest"
+  }
+}

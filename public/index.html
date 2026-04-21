@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facu y Andre - Invitación</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-inner">
+        <nav class="main-nav">
+          <a href="#save-the-date">Save the date</a>
+          <a href="#lugar">Lugar</a>
+          <a href="#dress-code">Dress code</a>
+          <a href="#cronograma">Cronograma</a>
+          <a href="#preguntas">Preguntas</a>
+          <a href="#rsvp" class="nav-rsvp">RSVP</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Landing principal -->
+      <section id="landing" class="section section-landing">
+        <div class="landing-video-container">
+          <video
+            class="landing-video"
+            autoplay
+            muted
+            loop
+            playsinline
+          >
+            <source src="/media/LandingPage_back.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="landing-overlay">
+          <div class="landing-top">
+            <p class="landing-subtitle">NOS CASAMOS</p>
+            <h1 class="landing-title">Facu y Andre</h1>
+          </div>
+
+          <div class="landing-divider">
+            <p class="landing-quote">
+              “Nuestro amor no llegó suave: irrumpió como marea alta y cambió nuestro
+              destino.”
+            </p>
+          </div>
+
+          <div class="landing-paper-wrapper">
+            <div class="landing-paper">
+              <img
+                src="/media/LandingPage_PaperImage.png"
+                alt="Fondo de papel de la invitación"
+                class="landing-paper-image"
+              />
+              <div class="landing-paper-text">
+                <p>
+                  Queremos compartir el día más importante de nuestra vida con todos
+                  aquellos que nos han brindado felicidad, que nos traen buenos
+                  recuerdos y quienes nos envían pensamientos positivos a través de los
+                  años.
+                </p>
+                <p>
+                  Nuestra vida no sería lo mismo sin tu presencia por lo que no podés
+                  faltar en este día tan importante:
+                </p>
+                <p>
+                  Te invitamos oficialmente a nuestra fiesta de casamiento.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Save the date -->
+      <section id="save-the-date" class="section section-save-the-date">
+        <div class="section-inner save-the-date-inner">
+          <div class="save-the-date-top">
+            <img
+              src="/media/SaveTheDate_Top.png"
+              alt="Cinta con texto de invitación"
+              class="save-the-date-top-image"
+            />
+            <div class="save-the-date-top-text">
+              TE INVITAMOS A CELEBRAR CON NOSOTROS EL INICIO DE NUESTRO PARA SIEMPRE
+            </div>
+          </div>
+
+          <p class="save-the-date-date">
+            22 DE AGOSTO DE 2026<br />
+            20:00HS
+          </p>
+
+          <div class="save-the-date-card">
+            <img
+              src="/media/SaveTheDate_FyA.png"
+              alt="Foto de Facu y Andre con contador"
+              class="save-the-date-fya-image"
+            />
+            <div class="save-the-date-countdown" aria-label="Cuenta regresiva al casamiento">
+              <div class="countdown">
+                <div class="countdown-item">
+                  <span class="countdown-number" id="count-days">0</span>
+                  <span class="countdown-label">DÍAS</span>
+                </div>
+                <div class="countdown-item">
+                  <span class="countdown-number" id="count-hours">0</span>
+                  <span class="countdown-label">HORAS</span>
+                </div>
+                <div class="countdown-item">
+                  <span class="countdown-number" id="count-minutes">0</span>
+                  <span class="countdown-label">MIN</span>
+                </div>
+                <div class="countdown-item">
+                  <span class="countdown-number" id="count-seconds">0</span>
+                  <span class="countdown-label">SEG</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lugar -->
+      <section id="lugar" class="section section-lugar">
+        <div class="section-inner lugar-inner">
+          <img src="/media/Lugar_top.png" alt="Salón Janos" class="lugar-top-image" />
+
+          <div class="lugar-title-block">
+            <p class="lugar-eyebrow">CELEBRAREMOS EN NUESTRO SALON IDEAL:</p>
+            <p class="lugar-venue">JANOS SAN TELMO</p>
+            <p class="lugar-address">PERU 338, SAN TELMO</p>
+            <p class="lugar-city">BUENOS AIRES</p>
+          </div>
+
+          <img src="/media/Lugar_JANOs.png" alt="Fachada Janos San Telmo" class="lugar-janos-image" />
+
+          <div class="lugar-two-col">
+            <div class="lugar-col">
+              <h3 class="lugar-subtitle">DISPONIBILIDAD DE ESTACIONAMIENTO</h3>
+              <p class="lugar-text">EL SALON CUENTA CON ESTACIONAMIENTO TECHADO CON SEGURIDAD GRATUITA CON ESPACIO LIMITADO.</p>
+              <a href="#" class="lugar-link">SELECCIONA ACA PARA RESERVAR TU LUGAR</a>
+            </div>
+            <div class="lugar-col">
+              <h3 class="lugar-subtitle">ACCESIBILIDAD</h3>
+              <p class="lugar-text">EL SALON CUENTA CON ASCENSOR AL LADO DE LA ESCALERA, SOLICITA UTILIZARLO EN CASO DE QUE LO NECESITES</p>
+            </div>
+          </div>
+          <p class="lugar-text lugar-text-center">TENDRAS UN ESTACIONAMIENTO FRENTE AL SALON EN CASO DE NO TENER LUGAR EN JANOS SAN TELMO (SE DEBE ABONAR)</p>
+
+          <div class="lugar-como-llegar">
+            <img src="/media/SaveTheDate_Top.png" alt="" class="lugar-como-llegar-bg" aria-hidden="true" />
+            <span class="lugar-como-llegar-text">COMO LLEGAR</span>
+          </div>
+
+          <div class="lugar-map-wrapper">
+            <iframe
+              class="lugar-map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0217392!2d-58.3723904!3d-34.6194174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb3b3b3b3b3b%3A0x0!2zSmFub3MgU2FuIFRlbG1v!5e0!3m2!1sen!2sar!4v1234567890"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa Janos San Telmo"
+            ></iframe>
+            <p class="lugar-map-fallback">
+              <a href="https://www.google.com/maps?q=place_id:ChIJyy6HfM7LvJURfqWLaIc1UcE" target="_blank" rel="noopener noreferrer">Ver Janos San Telmo en Google Maps</a>
+            </p>
+          </div>
+
+          <div class="lugar-area-block">
+            <p class="lugar-subtitle">CERCANO A PLAZA DE MAYO</p>
+            <p class="lugar-text">AVENIDAS CERCANAS: 9 DE JULIO - PASEO COLON - RIVADAVIA - BELGRANO</p>
+            <p class="lugar-text">LINEA DE SUBTE CERCANAS: LINEA C - LINEA A - LINEA D - LINEA E</p>
+          </div>
+
+          <img src="/media/Lugar_bot1.png" alt="" class="lugar-bot-image" />
+
+          <div class="lugar-info-block">
+            <h3 class="lugar-subtitle">INFORMACION DE LA ZONA</h3>
+            <p class="lugar-text">ZONA CÉNTRICA, CULTURAL CON AMPLIOS ACCESOS TANTO COMO POR AUTO COMO POR TRANSPORTE PUBLICO, IDEAL PARA BUSCAR ALOJAMIENTOS CERCANOS: ESTARAN EN EL CORAZON DE BUENOS AIRES</p>
+            <p class="lugar-subtitle lugar-subtitle-sm">RECOMENDACIONES EXTRAS:</p>
+            <p class="lugar-text">ESTACIONA EN ESTACIONAMIENTOS Y NO EN VEREDA</p>
+            <p class="lugar-text">TENE PRECAUCIONES EXTRAS COMO NO EXPONER EL TELEFONO</p>
+          </div>
+
+          <img src="/media/Lugar_bot2.png" alt="" class="lugar-bot-image" />
+        </div>
+      </section>
+
+      <!-- Dress code -->
+      <section id="dress-code" class="section section-dress-code">
+        <div class="section-inner dresscode-inner">
+          <div class="dresscode-text">
+            <p class="dresscode-title">
+              DRESS CODE:<br />
+              <span class="dresscode-title-accent">ELEGANTE</span>
+            </p>
+
+            <p class="dresscode-paragraph">
+              TE PEDIMOS QUE TENGAS EN CUENTA LOS SIGUIENTES PEDIDOS PARA QUE TU
+              VESTIMENTA SEA ACORDE:
+            </p>
+
+            <ul class="dresscode-list">
+              <li>NO USAR GAMAS DE BLANCO O AZUL (EN TODAS SUS TONALIDADES)</li>
+              <li>
+                EVITAR ZAPATILLAS - EN CASO DE NO TENER ZAPATOS, UTILIZAR ZAPATILLAS
+                DISCRETAS. NO SE ADMITEN ZAPATILLAS DEPORTIVAS
+              </li>
+              <li>EVITAR JEANS</li>
+              <li>PODES TRAER CALZADO COMODO PARA LA TANDA DE BAILE COMO CHATITAS</li>
+            </ul>
+
+            <p class="dresscode-paragraph">DALO TODO CON TU OUTFIT!</p>
+          </div>
+
+          <div class="dresscode-inspo">
+            <img
+              src="/media/SaveTheDate_Top.png"
+              alt=""
+              class="dresscode-inspo-bg"
+              aria-hidden="true"
+            />
+            <span class="dresscode-inspo-text">INSPO</span>
+          </div>
+
+          <img
+            src="/media/DressCode_Ex.png"
+            alt="Ejemplos de inspiración de vestimenta"
+            class="dresscode-ex-image"
+          />
+        </div>
+      </section>
+
+      <!-- Cronograma -->
+      <section id="cronograma" class="section section-cronograma">
+        <div class="section-inner cronograma-inner">
+        </div>
+      </section>
+
+      <!-- Preguntas -->
+      <section id="preguntas" class="section section-preguntas">
+        <div class="preguntas-video-bg">
+          <video
+            class="preguntas-video"
+            autoplay
+            muted
+            loop
+            playsinline
+          >
+            <source src="/media/Fondo_PREGUNTAS.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="preguntas-overlay"></div>
+
+        <div class="section-inner preguntas-inner">
+          <!-- Primera pregunta -->
+          <div class="preguntas-block">
+            <p class="preguntas-question">¿Puedo llevar acompañante?</p>
+            <p class="preguntas-text">Todas las personas que tienen un +1 en su invitacion pueden llevar acompañantes. En caso de que no lo tengas, tu unica compania es suficiente para nosotros</p>
+          </div>
+
+          <!-- Segunda pregunta -->
+          <div class="preguntas-block">
+            <p class="preguntas-question">¿Puedo acceder con menores?</p>
+            <p class="preguntas-text">El evento no es adecuado para menores, por lo que no estara permitido su ingreso. Accede <a href="#" class="preguntas-link">ACA</a> en caso de necesitar mas informacion al respecto</p>
+            <p class="preguntas-text">Por favor no nos comprometas, los asientos estan asignados y no modificaremos la lista de invitados.</p>
+          </div>
+
+          <!-- Tercera pregunta -->
+          <div class="preguntas-block">
+            <p class="preguntas-question">¿Puedo elegir con quien sentarme?</p>
+            <p class="preguntas-text">Los asientos fueron elegidos en base a quienes conocen o vibras similares. Si desean, una vez que finalice la comida, podran cambiar de lugar</p>
+          </div>
+
+          <!-- Cuarta pregunta -->
+          <div class="preguntas-block">
+            <p class="preguntas-question">¿Que pasa si llego tarde a la ceremonia?</p>
+            <p class="preguntas-text">Compartimos los horarios para que no te pierdas nada Si al llegar la ceremonia esta iniciada, deberas aguardar a que la misma termine en recepcion</p>
+          </div>
+
+          <!-- Imagen 1 -->
+          <img src="/media/Foto_1_Preguntas.jpg" alt="Foto Preguntas 1" class="preguntas-photo" />
+
+          <!-- Sección - Es necesario llevar regalo? -->
+          <div class="preguntas-title-section">
+            <img src="/media/Titulo_PREGUNTAS.png" alt="Titulo Preguntas" class="preguntas-title-bg" />
+            <p class="preguntas-title-text">es necesario llevar regalo?</p>
+          </div>
+
+          <div class="preguntas-block">
+            <p class="preguntas-text">Tu asistencia a nuestro casamiento sera mas que suficiente, y debido a que vivimos juntos hace algunos a;os no necesitamos bienes materiales (ni tenemos lugar para poner mas cosas). Agradecmos en caso de que quieran regalarnos algo material, sin embargo no es necesario.</p>
+            <p class="preguntas-text">Si desean brindarnos algo puntual, al ingresar al salon podran entregarselo a nuestra organizadora</p>
+            <p class="preguntas-text">Si deseas, podes enviarnos un regalo que nos ayude a disfrutar aun mas nuestra luna de miel.<br/>Sabemos que su regalo monetario es una gran inversión, por lo que agradecemos cualquier cantidad con humildad y mucha ilusión.</p>
+            <p class="preguntas-text">Al ingresar la fiesta, tendran disponibles QR donde podran brindarnos su regalo y llegaran a nuestras cuentas bancarias.</p>
+          </div>
+
+          <!-- Imagen 2 -->
+          <img src="/media/Foto_2_Preguntas.jpg" alt="Foto Preguntas 2" class="preguntas-photo" />
+
+          <!-- Sección - Por que no aceptan niños? -->
+          <div class="preguntas-title-section">
+            <img src="/media/Titulo_PREGUNTAS.png" alt="Titulo Preguntas" class="preguntas-title-bg" />
+            <p class="preguntas-title-text">Por que no aceptan niños?</p>
+          </div>
+
+          <div class="preguntas-two-cols">
+            <div class="preguntas-col">
+              <h4 class="preguntas-col-title">Ambiente para adultos</h4>
+              <p class="preguntas-text">El ambiente de la boda dispondra de lenguaje inadecuado y contaremos con barra libre, lo que indica que habra adultos alcoholizados.</p>
+              <h4 class="preguntas-col-title">Espacio inseguro para niños</h4>
+              <p class="preguntas-text">Nuestro salon cuenta con escaleras en el ingreso, en recepcion y en el espacio principal. Sumado a eso, dispone de un estilo industrial, el cual cuenta con ladrillos expuestos los cuales pueden agravar una caida<br/><br/>Evitemos accidentes</p>
+            </div>
+
+            <div class="preguntas-col">
+              <h4 class="preguntas-col-title">Volumen de la musica</h4>
+              <p class="preguntas-text">La musica se encontrara en desibeles muy altos para los oidos de los menores.</p>
+              <h4 class="preguntas-col-title">Niños: buenas noches. Adultos: ¡buena noche!</h4>
+              <p class="preguntas-text">No disponemos de cuidadores o entretenimiento para los mas chicos durante la fiesta, por lo que sera su responsabilidad y pueden perderse sorpresas que tenemos preparadas.<br/><br/>¿Hace cuánto no tienen una noche solos? Ya tienen a quien echarle la culpa, a nosotros.<br/><br/>Disfruten esta noche como una cita para ustedes</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP -->
+      <section id="rsvp" class="section section-rsvp">
+        <div class="section-inner rsvp-inner">
+          <!-- Imagen de texto RSVP con textos superpuestos -->
+          <div class="rsvp-image-text-wrapper">
+            <img src="/media/Imagen_Text_RSVP.jpg" alt="RSVP Invitation" class="rsvp-image-text" />
+            <div class="rsvp-image-text-content">
+              <p class="rsvp-text-overlay">esperamos poder verte desde el altar, fuiste invitado con mucho cari;o y esperamos verte presente</p>
+              <p class="rsvp-text-overlay">por favor, te pedimos que confirmes tu asistencia antes del <br/>1 de agosto del 2026</p>
+              <p class="rsvp-text-overlay rsvp-text-cta">CONFIRMA TU ASISTENCIA AHORA</p>
+            </div>
+          </div>
+
+          <!-- Galería de imágenes RSVP -->
+          <img src="/media/Imagen_RSVP.jpg" alt="RSVP Gallery" class="rsvp-gallery-image" />
+
+          <!-- Sección de pie: texto a la izquierda, logo a la derecha -->
+          <div class="rsvp-footer">
+            <p class="rsvp-footer-text">En caso de no asistir y haber completado el formulario, enviarlo nuevamente con la negativa. muchas gracias</p>
+            <img src="/media/Logo_RSVP.jpg" alt="Logo RSVP" class="rsvp-logo" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
+
