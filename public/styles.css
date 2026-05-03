@@ -72,7 +72,7 @@ a {
 
 .main-nav a {
   position: relative;
-  color: #000000;
+  color: #172a3a;
 }
 
 .main-nav a::after {
@@ -93,7 +93,7 @@ a {
 
 .main-nav .nav-rsvp {
   padding: 0.3rem 0.9rem;
-  border: 1px solid #000000;
+  border: 1px solid #172a3a;
   border-radius: 999px;
 }
 
@@ -175,9 +175,7 @@ a {
 }
 
 .landing-overlay {
-  max-width: 620px;
-  margin: 0 auto;
-  padding: 4.5rem 1.5rem 4rem;
+  padding: 4.5rem 0 4rem;
   display: flex;
   flex-direction: column;
   gap: 2.2rem;
@@ -210,9 +208,14 @@ a {
 .landing-divider {
   background-color: var(--color-pastel-yellow);
   padding: 0.85rem 1.8rem;
-  margin-inline: auto;
-  max-width: 90%;
+  width: 100vw;         /* ancho de la ventana */
+  margin: 0;            /* elimina centrado */
+  position: relative;   /* asegura que se posicione dentro del flujo */
+  left: 50%;
+  transform: translateX(-50%); /* centra el bloque expandido */
+  color:#172a3a;
 }
+
 
 .landing-quote {
   margin: 0;
@@ -234,6 +237,13 @@ a {
   width: min(82%, 420px);
 }
 
+@media (max-width: 480px) {
+  .landing-paper {
+    width: 90%; /* más chico en móviles */
+    max-width: 280px; /* límite absoluto para que no se vea gigante */
+  }
+}
+
 .landing-paper-image {
   width: 100%;
   display: block;
@@ -246,10 +256,11 @@ a {
   flex-direction: column;
   justify-content: center;
   gap: 0.8rem;
-  font-size: 0.86rem;
-  line-height: 1.7;
-  color: #000000;
+  font-size: 1.0vw;
+  line-height: 1.6;
+  color: #172a3a;
   text-align: left;
+  word-wrap: break-word;
 }
 
 .landing-paper-text p {
@@ -262,12 +273,10 @@ a {
   background-image: url("/media/SaveTheDate_Back.png");
   background-size: cover;
   background-position: center;
-  color: #000000;
   font-family: "Cinzel", "Playfair Display", "Times New Roman", serif;
 }
 
 .save-the-date-inner {
-  max-width: 640px;
   margin: 0 auto;
   text-align: center;
   padding-top: 3.5rem;
@@ -276,13 +285,16 @@ a {
 
 .save-the-date-top {
   position: relative;
-  width: 100%;
-  max-width: 640px;
+  width: 100vw;
   margin: 0 auto 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .save-the-date-top-image {
   width: 100%;
+  height: 100px;
+  object-fit: cover;
   display: block;
 }
 
@@ -293,9 +305,10 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  color: #172a3a;
 }
 
 .save-the-date-date {
@@ -443,7 +456,7 @@ a {
 
 .lugar-eyebrow {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -458,14 +471,14 @@ a {
 .lugar-address,
 .lugar-city {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .lugar-two-col {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 2rem;
   width: 100%;
   text-align: left;
@@ -490,7 +503,7 @@ a {
 
 .lugar-text {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   line-height: 1.6;
   letter-spacing: 0.08em;
 }
@@ -502,19 +515,28 @@ a {
 .lugar-link {
   color: var(--color-pastel-yellow);
   text-decoration: underline;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   letter-spacing: 0.1em;
 }
 
 .lugar-como-llegar {
   position: relative;
-  width: 100%;
-  max-width: 210px;
-  margin: 0 auto;
+  /* Break out of .lugar-inner (max-width + align-items: center) to true viewport width */
+  align-self: flex-start;
+  width: 100vw;
+  max-width: none;
+  flex-shrink: 0;
+  margin-left: calc(50% - 50vw);
+  left: auto;
+  transform: none;
+  box-sizing: border-box;
 }
 
 .lugar-como-llegar-bg {
   width: 100%;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -644,7 +666,7 @@ a {
 .dresscode-list {
   list-style: none;
   padding: 0;
-  margin: 0.25rem 0 0;
+  margin: 0.25rem 0 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -656,25 +678,28 @@ a {
 
 .dresscode-inspo {
   position: relative;
-  width: 100%;
-  max-width: 540px;
-  margin: 0 auto;
-  padding-right: 12%;
-  display: flex;
-  justify-content: flex-start;
+  /* Same full-bleed breakout as .lugar-como-llegar inside a centered flex column */
+  align-self: flex-start;
+  width: 100vw;
+  max-width: none;
+  flex-shrink: 0;
+  margin-left: calc(50% - 50vw);
+  padding-right: 0;
+  display: block;
+  box-sizing: border-box;
 }
 
 .dresscode-inspo-bg {
-  width: 210px;
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
 .dresscode-inspo-text {
   position: absolute;
-  top: 50%;
-  left: 0;
-  width: 210px;
-  transform: translateY(-50%);
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -685,30 +710,140 @@ a {
 }
 
 .dresscode-ex-image {
-  width: 100%;
+  /* 15% larger than the dress code column; parent .dresscode-inner is max 720px */
+  width: 115%;
+  max-width: calc(720px * 1.15);
   display: block;
-  max-width: 720px;
+  flex-shrink: 0;
 }
 
 /* Cronograma */
 
 .section-cronograma {
-  padding: 0;
-  min-height: auto;
-  background: none;
+  padding: 4rem 1.5rem;
+  background-image: url("/media/Lugar_back.png");
+  background-size: cover;
+  background-position: center;
+  font-family: "Cinzel", "Playfair Display", "Times New Roman", serif;
+  color: #c6c3af;
 }
 
-
 .cronograma-inner {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.cronograma-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.cronograma-timeline::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: #c6c3af;
+}
+
+.cronograma-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 8.8rem;
+}
+
+.cronograma-item-media {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cronograma-item-image {
   width: 100%;
-  max-width: none;
+  max-width: 320px;
+  display: block;
+}
+
+.cronograma-item-media--empty {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cronograma-item-center {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 2;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.cronograma-heart {
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #c6c3af;
+}
+
+.cronograma-item-text {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  color: #c6c3af;
+  letter-spacing: 0.1em;
+  justify-content: center;
+  align-self: center;
+}
+
+.cronograma-item--reverse .cronograma-item-media {
+  order: 3;
+  justify-content: flex-start;
+}
+
+.cronograma-item--reverse .cronograma-item-center {
+  order: 2;
+}
+
+.cronograma-item--reverse .cronograma-item-text {
+  order: 1;
+}
+
+.cronograma-item-text-left {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.cronograma-item-text-right {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.cronograma-label,
+.cronograma-time {
   margin: 0;
 }
 
-.cronograma-image {
-  width: 100%;
-  height: auto;
-  display: block;
+.cronograma-label {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.cronograma-time {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 
@@ -766,15 +901,21 @@ a {
   color: #eeeee6;
   margin: 0;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 
 .preguntas-text {
-  font-family: "Cinzel", "Times New Roman", serif;
-  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: clamp(0.66rem, 1.2vw, 0.84rem);
   color: #eeeee6;
   margin: 0;
   line-height: 1.7;
   letter-spacing: 0.02em;
+}
+
+/* Centered variant for gift / thank-you copy only */
+.preguntas-text--center {
+  text-align: center;
 }
 
 .preguntas-link {
@@ -798,14 +939,22 @@ a {
 
 .preguntas-title-section {
   position: relative;
-  margin: 2rem auto;
-  width: 100%;
-  max-width: 500px;
+  /* Full-bleed divider inside .preguntas-inner (same technique as lugar-como-llegar / dresscode-inspo) */
+  align-self: flex-start;
+  width: 100vw;
+  max-width: none;
+  flex-shrink: 0;
+  margin: 2rem 0;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
 }
 
 .preguntas-title-bg {
   width: 100%;
-  height: auto;
+  /* Keep full width but cap height ~ old 500px-wide strip; crop excess paper with cover */
+  height: clamp(4.5rem, 18vw, 6.75rem);
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -863,6 +1012,10 @@ a {
     white-space: normal;
     font-size: 1.1rem;
   }
+
+  .preguntas-title-bg {
+    height: clamp(5.25rem, 22vw, 7rem);
+  }
 }
 
 /* RSVP */
@@ -873,11 +1026,12 @@ a {
   background-position: center;
   background-attachment: scroll;
   position: relative;
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem 0;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .section-rsvp::before {
@@ -891,10 +1045,12 @@ a {
 .section-inner.rsvp-inner {
   position: relative;
   z-index: 1;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -962,11 +1118,13 @@ a {
 
 .rsvp-footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  justify-content: space-between;
+  text-align: center;
+  gap: 1.25rem;
   width: 100%;
   max-width: 600px;
+  margin-top: auto;
   padding: 0 1rem;
 }
 
@@ -977,7 +1135,8 @@ a {
   margin: 0;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  flex: 1;
+  text-align: center;
+  max-width: 100%;
 }
 
 .rsvp-logo {
@@ -985,6 +1144,8 @@ a {
   height: 80px;
   object-fit: contain;
   flex-shrink: 0;
+  display: block;
+  margin-bottom: 0;
 }
 
 @media (max-width: 900px) {
@@ -1007,8 +1168,9 @@ a {
 
 @media (max-width: 640px) {
   .section-rsvp {
-    padding: 2rem 1rem;
-    min-height: auto;
+    padding: 2rem 1rem 0;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .rsvp-image-text-content {
@@ -1021,8 +1183,6 @@ a {
   }
 
   .rsvp-footer {
-    flex-direction: column;
-    text-align: center;
     gap: 1rem;
   }
 
@@ -1058,8 +1218,7 @@ a {
   }
 
   .section-cronograma {
-    padding-inline: 0;
-    padding-block: 0;
+    padding: 3.25rem 1.2rem;
   }
 }
 
@@ -1078,18 +1237,37 @@ a {
   }
 
   .section-cronograma {
-    padding: 0;
+    padding: 3rem 1rem;
   }
 
-  .cronograma-inner {
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
+  .cronograma-timeline {
+    gap: 1.7rem;
   }
 
-  .cronograma-image {
-    width: 100vw;
-    max-width: 100vw;
+  .cronograma-timeline::before {
+    left: calc(50% - 0.8rem);
+  }
+
+  .cronograma-item {
+    gap: 0.8rem;
+    min-height: 6.5rem;
+  }
+
+  .cronograma-item-media:not(.cronograma-item-media--empty) {
+    max-width: 150px;
+  }
+
+  .cronograma-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+  }
+
+  .cronograma-time {
+    font-size: 0.68rem;
+  }
+
+  .cronograma-heart {
+    font-size: 0.95rem;
   }
 
   .landing-overlay {

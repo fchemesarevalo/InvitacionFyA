@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Estacionamiento</title>
+    <style>
+        :root {
+            --primary-color: #d4af37;
+            --bg-color: #f4f4f9;
+            --text-color: #444;
+            --accent-pink: #e91e63;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Georgia', serif;
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #eee;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #fafafa;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #b8962e;
+            transform: translateY(-2px);
+        }
+
+        .disclaimer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #666;
+            font-style: italic;
+        }
+
+        .heart {
+            color: var(--accent-pink);
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Necesito reservar estacionamiento</h1>
+    
+    <form id="parkingForm" action="https://formspree.io/f/mjgjzdnv" method="POST">
+        <div class="input-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="input-group">
+            <label for="carType">Tipo de vehículo</label>
+            <select id="carType" name="carType">
+                <option value="moto">Moto</option>
+                <option value="auto">Auto</option>
+                <option value="camioneta">Camioneta</option>
+            </select>
+        </div>
+
+        <button type="submit">Reservar lugar</button>
+    </form>
+
+    <div class="disclaimer">
+        Recordá que es ilegal manejar y tomar alcohol, recomendamos tomar Uber si vas a beber <span class="heart">🩷</span>
+    </div>
+</div>
+
+<script>
+    document.getElementById('parkingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nombre = document.getElementById('name').value;
+        alert('¡Lugar reservado para ' + nombre + '! Te esperamos.');
+    });
+</script>
+
+</body>
+</html>
