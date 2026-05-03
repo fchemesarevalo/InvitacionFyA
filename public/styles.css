@@ -267,6 +267,14 @@ a {
   margin: 0;
 }
 
+/* Media query para móviles */
+@media (max-width: 480px) {
+  .landing-paper-text {
+    font-size: 1.2rem;   /* más grande en celulares */
+    line-height: 1.7;   /* un poco más de aire */
+  }
+}
+
 /* Save the date */
 
 .section-save-the-date {
@@ -718,7 +726,6 @@ a {
 }
 
 /* Cronograma */
-
 .section-cronograma {
   padding: 4rem 1.5rem;
   background-image: url("/media/Lugar_back.png");
@@ -729,43 +736,23 @@ a {
 }
 
 .cronograma-inner {
-  max-width: 980px;
+  max-width: 720px; /* más angosto para lista centrada */
   margin: 0 auto;
 }
 
 .cronograma-timeline {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2.2rem;
-}
-
-.cronograma-timeline::before {
-  content: "";
-  position: absolute;
-  top: 1rem;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  background-color: #c6c3af;
+  gap: 2.5rem;
+  align-items: center; /* centra todo */
+  text-align: center;
 }
 
 .cronograma-item {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 0.8rem;
   align-items: center;
-  gap: 1.25rem;
-  min-height: 8.8rem;
-}
-
-.cronograma-item-media {
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 }
 
 .cronograma-item-image {
@@ -774,78 +761,29 @@ a {
   display: block;
 }
 
-.cronograma-item-media--empty {
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.cronograma-item-center {
-  flex: 0 0 auto;
-  position: relative;
-  z-index: 2;
-  width: 2.4rem;
-  height: 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-}
-
-.cronograma-heart {
-  font-size: 1.2rem;
-  line-height: 1;
-  color: #c6c3af;
-}
-
-.cronograma-item-text {
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+.cronograma-label {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   text-transform: uppercase;
-  color: #c6c3af;
   letter-spacing: 0.1em;
-  justify-content: center;
-  align-self: center;
 }
 
-.cronograma-item--reverse .cronograma-item-media {
-  order: 3;
-  justify-content: flex-start;
-}
-
-.cronograma-item--reverse .cronograma-item-center {
-  order: 2;
-}
-
-.cronograma-item--reverse .cronograma-item-text {
-  order: 1;
-}
-
-.cronograma-item-text-left {
-  text-align: right;
-  align-items: flex-end;
-}
-
-.cronograma-item-text-right {
-  text-align: left;
-  align-items: flex-start;
-}
-
-.cronograma-label,
 .cronograma-time {
   margin: 0;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  letter-spacing: 0.05em;
 }
 
-.cronograma-label {
-  font-size: clamp(1rem, 2vw, 1.3rem);
-}
+/* Responsive */
+@media (max-width: 600px) {
+  .cronograma-inner {
+    max-width: 100%; /* ocupa todo el ancho en móvil */
+  }
 
-.cronograma-time {
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  .cronograma-item-image {
+    max-width: 90%; /* que no quede pegado a los bordes */
+  }
 }
-
 
 /* Preguntas */
 
@@ -1264,10 +1202,6 @@ a {
 
   .cronograma-time {
     font-size: 0.68rem;
-  }
-
-  .cronograma-heart {
-    font-size: 0.95rem;
   }
 
   .landing-overlay {
