@@ -516,10 +516,6 @@ a {
   letter-spacing: 0.08em;
 }
 
-.lugar-text-center {
-  text-align: center;
-}
-
 .lugar-link {
   color: var(--color-pastel-yellow);
   text-decoration: underline;
@@ -845,7 +841,7 @@ a {
 
 .preguntas-text {
   font-family: "Playfair Display", "Times New Roman", serif;
-  font-size: clamp(0.66rem, 1.2vw, 0.84rem);
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
   color: #eeeee6;
   margin: 0;
   line-height: 1.7;
@@ -1197,12 +1193,12 @@ a {
   }
 
   .cronograma-label {
-    font-size: 0.78rem;
+    font-size: 1rem;
     letter-spacing: 0.08em;
   }
 
   .cronograma-time {
-    font-size: 0.68rem;
+    font-size: 0.9rem;
   }
 
   .landing-overlay {
