@@ -270,7 +270,7 @@ a {
 /* Media query para móviles */
 @media (max-width: 480px) {
   .landing-paper-text {
-    font-size: 1.2rem;   /* más grande en celulares */
+    font-size: 2rem;   /* más grande en celulares */
     line-height: 1.7;   /* un poco más de aire */
   }
 }
